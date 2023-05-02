@@ -1,0 +1,28 @@
+{
+  "name": "tel335_app",
+  "version": "0.0.1",
+  "description": "Aplicación de cocktails",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vicentesannsa/TEL335_app.git"
+  },
+  "keywords": [
+    "Cocktail",
+    "Koa",
+    "NodeJS"
+  ],
+  "author": "Grupo SEX",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vicentesannsa/TEL335_app/issues"
+  },
+  "homepage": "https://github.com/vicentesannsa/TEL335_app#readme",
+  "dependencies": {
+    "koa": "^2.14.2",
+    "koa-static": "^5.0.0"
+  }
+}
