@@ -7,12 +7,27 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-    <h1>Aplicación de Coctelería</h1>
-    <section>
-        <h2>Cocteles disponibles</h2>
+    <section class="section">
+        <h1>Aplicación de Coctelería</h1>
+        <hr>
     </section>
-    <section>
+    <section class="section">
+        <h2>Cocteles disponibles</h2>
+        <hr>
+    </section>
+    <section class="section">
         <h2>Añadir cocteles</h2>
+        <form action="/recetas" method="POST" enctype="application/x-www-form-urlencoded">
+            <label for="title">Nombre:</label>
+            <input type="text" name="title" id="title" placeholder="Título de la receta">
+            <label for="ingredients">Ingredientes</label>
+            <textarea name="ingredients" id="ingredients" cols="30" rows="5" placeholder="Separar los ingredientes de la receta mediante un punto..."></textarea>
+            <label for="preparation">Preparación:</label>
+            <textarea name="preparation" id="preparation" cols="30" rows="5" placeholder="Separar las instrucciones de la preparación mediante un punto..."></textarea>
+            <label for="link">Enlace a video:</label>
+            <input type="text" name="link" id="link" placeholder="Enlace hacia el video">
+            <input type="submit" value="Crear Receta">
+        </form>
     </section>
 </body>
 </html>
