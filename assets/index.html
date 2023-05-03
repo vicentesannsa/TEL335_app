@@ -13,6 +13,7 @@
     </section>
     <section class="section">
         <h2>Cocteles disponibles</h2>
+        <div id="recipe-list"></div>
         <hr>
     </section>
     <section class="section">
@@ -29,5 +30,43 @@
             <input type="submit" value="Crear Receta">
         </form>
     </section>
+    <script type="text/javascript">
+        const $recipe_list = document.getElementById("recipe-list");
+
+        fetch("http://127.0.0.1:3000/recetas")
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(element => {
+                let ingredientsTemplate = "",
+                preparationTemplate = "";
+
+                const ingredients = element.ingredients,
+                preparation = element.preparation;
+
+                ingredients.forEach(ingredient => {
+                    ingredientsTemplate += `<li>${ingredient}</li>`;
+                });
+
+                preparation.forEach(step => {
+                    preparationTemplate += `<li>${step}</li>`;
+                });
+            
+                let recipeTemplate = `
+                    <article>
+                        <h3><a href="${element.id}">${element.title}</a></h3>
+                        <h4>Ingredientes:</h4>
+                        <ul>${ingredientsTemplate}</ul>
+                        <h4>Preparación:</h4>
+                        <ol>${preparationTemplate}</ol>
+                        <a class="link" href="${element.link}">Tutorial</a>
+                    </article>
+                `;
+
+                $recipe_list.innerHTML = recipeTemplate;
+            });
+        })
+        .catch(error => console.error(error));
+    
+    </script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+{
+    "recetas": [
+        {
+            "id": 1,
+            "title": "Honey Lemonade",
+            "ingredients": [
+                "Jack Daniel's Honey 60 ml",
+                "Jugo de limón 30 ml",
+                "Jarabe natural 15 ml",
+                "Agua mineral",
+                "Hojas de menta"
+            ],
+            "preparation": [
+                "En un shaker macera cardamomo y hierbabuena",
+                "Agrega hielo y los demás ingredientes de la receta",
+                "Agita vigorosamente hasta que sude el shaker",
+                "Haz un colado fino y sirve en vaso old fashioned con hielos",
+                "Puedes decorar con hojitas de hierbabuena o dos granos de café sobre la espuma"
+            ],
+            "link": "https://youtu.be/kzr9aef_71Q"
+        }
+    ]
+}

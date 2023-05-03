@@ -10,6 +10,20 @@ html {
     box-sizing: inherit;
 }
 
+a {
+    text-decoration: none;
+    color: #E55812;
+    transition: color 250ms ease-in-out;
+}
+
+a:hover {
+    color: #2EC4B6;
+}
+
+article {
+    margin: 0.5rem;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -26,6 +40,18 @@ h1 {
 h2 {
     font-size: 1.75rem;
     margin: 0.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
 }
 
 input[type="text"] {
@@ -68,6 +94,10 @@ label {
     padding-top: 0.5rem;
 }
 
+li {
+    font-size: 1.25rem;
+}
+
 textarea {
     background-color: #ECF0F1;
     border: none;
@@ -80,7 +110,22 @@ textarea::placeholder {
     color: #000;
 }
 
+ul {
+    margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
+}
+
 /* Clases de la página */
+
+.link {
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition: color 250ms ease-in-out;
+}
+
+.link:hover {
+    color: #2EC4B6;
+}
 
 .section {
     width: 80%;
