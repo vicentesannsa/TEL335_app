@@ -1,23 +1,41 @@
 {
   "recetas": [
+      {
+        "id": 1,
+        "title": "Honey Lemonade",
+        "ingredients": [
+          "Jack Daniel's Honey 60 ml",
+          "Jugo de limón 30 ml",
+          "Jarabe natural 15 ml",
+          "Agua mineral",
+          "Hojas de menta"
+        ],
+        "preparation": [
+          "En un shaker macera cardamomo y hierbabuena",
+          "Agrega hielo y los demás ingredientes de la receta",
+          "Agita vigorosamente hasta que sude el shaker",
+          "Haz un colado fino y sirve en vaso old fashioned con hielos",
+          "Puedes decorar con hojitas de hierbabuena o dos granos de café sobre la espuma"
+        ],
+        "link": "https://youtu.be/kzr9aef_71Q"
+    },
     {
-      "id": 1,
-      "title": "Honey Lemonade",
+      "id": 2,
+      "title": "Ramazzotti Spritz",
       "ingredients": [
-        "Jack Daniel's Honey 60 ml",
-        "Jugo de limón 30 ml",
-        "Jarabe natural 15 ml",
-        "Agua mineral",
-        "Hojas de menta"
+        "Hielo",
+        "Ramazzotti",
+        "Espumante",
+        "Agua mineral con gas (opcional",
+        "Rodaja de naranja",
+        "Arándanos o frambuesas"
       ],
       "preparation": [
-        "En un shaker macera cardamomo y hierbabuena",
-        "Agrega hielo y los demás ingredientes de la receta",
-        "Agita vigorosamente hasta que sude el shaker",
-        "Haz un colado fino y sirve en vaso old fashioned con hielos",
-        "Puedes decorar con hojitas de hierbabuena o dos granos de café sobre la espuma"
+        "En una copa, agregar mucho hielo",
+        "Servir en proporciones iguales primero el Ramazzotti, y luego el espumante. Finalmente agregar un chorrito de agua mineral con gas y revolver",
+        "Decorar con una rodaja de naranja y berries, a gusto"
       ],
-      "link": "https://youtu.be/kzr9aef_71Q"
+      "link": "https://youtu.be/71mCXkEVcVY"
     }
   ]
 }

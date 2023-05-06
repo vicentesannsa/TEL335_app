@@ -25,4 +25,3 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 app.listen(port, () => console.log(`Iniciando Koa.JS en http://127.0.0.1:${port}/`));
-
