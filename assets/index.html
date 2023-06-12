@@ -3,32 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Inicio</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
+    <ul class="lista">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/enterprise">Sobre Nosotros</a></li>
+        <li><a href="/cocktail-add">Añadir</a></li>
+    </ul>
     <section class="section">
-        <h1>Aplicación de Coctelería</h1>
+        <h1>Cocteles disponibles</h1>
         <hr>
-    </section>
-    <section class="section">
-        <h2>Cocteles disponibles</h2>
         <div id="recipe-list"></div>
-        <hr>
-    </section>
-    <section class="section">
-        <h2>Añadir cocteles</h2>
-        <form action="/recetas" method="POST" enctype="application/x-www-form-urlencoded" id="form">
-            <label for="title">Nombre:</label>
-            <input type="text" name="title" id="title" placeholder="Título de la receta">
-            <label for="ingredients">Ingredientes</label>
-            <textarea name="ingredients" id="ingredients" cols="30" rows="5" placeholder="Separar los ingredientes de la receta mediante un punto..."></textarea>
-            <label for="preparation">Preparación:</label>
-            <textarea name="preparation" id="preparation" cols="30" rows="5" placeholder="Separar las instrucciones de la preparación mediante un punto..."></textarea>
-            <label for="link">Enlace a video:</label>
-            <input type="text" name="link" id="link" placeholder="Enlace hacia el video">
-            <input id="submit-form" type="submit" value="Crear Receta">
-        </form>
     </section>
     <script type="text/javascript">
         let recipeTemplate = "";
@@ -37,7 +24,7 @@
         $recipe_list = document.getElementById("recipe-list"),
         $submit_form = document.getElementById("submit-form");
 
-        fetch("http://127.0.0.1:3000/recetas")
+        fetch("http://localhost:3000/recetas")
         .then(response => response.json())
         .then(data => {
             data.forEach(element => {
@@ -69,25 +56,6 @@
             $recipe_list.innerHTML = recipeTemplate;
         })
         .catch(error => console.error(error));
-
-        document.addEventListener("click", e => {
-            e.preventDefault()
-            if(e.target == $submit_form){
-                let title = $form.title.value,
-                link = $form.link.value;
-            
-                let ingredients = $form.ingredients.value.replace(/\n/g, "");
-                ingredients = ingredients.split(".");
-                ingredients.pop();
-
-                let preparation = $form.preparation.value.replace(/\n/g, "");
-                preparation = preparation.split(".");
-                preparation.pop();
-
-                console.log(title, ingredients, preparation, link);
-                $form.submit()
-            }
-        });
     </script>
 </body>
 </html>
