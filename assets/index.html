@@ -15,7 +15,7 @@
     <section class="section">
         <h1>Cocteles disponibles</h1>
         <hr>
-        <div id="recipe-list"></div>
+        <div id="recipe-list" class="grid-fluid"></div>
     </section>
     <script type="text/javascript">
         let recipeTemplate = "";
@@ -28,28 +28,13 @@
         .then(response => response.json())
         .then(data => {
             data.forEach(element => {
-                let ingredientsTemplate = "",
-                preparationTemplate = "";
-
-                const ingredients = element.ingredients,
-                preparation = element.preparation;
-
-                ingredients.forEach(ingredient => {
-                    ingredientsTemplate += `<li>${ingredient}</li>`;
-                });
-
-                preparation.forEach(step => {
-                    preparationTemplate += `<li>${step}</li>`;
-                });
             
                 recipeTemplate += `
                     <article class="border">
                         <h3><a href="/cocktail/${element.id}">${element.title}</a></h3>
-                        <h4>Ingredientes:</h4>
-                        <ul>${ingredientsTemplate}</ul>
-                        <h4>Preparación:</h4>
-                        <ol>${preparationTemplate}</ol>
-                        <a class="link" href="${element.link}">Tutorial</a>
+                        <figure>
+                            <img src="${element.image}" alt="${element.title}">
+                        </figure>
                     </article>
                 `;
             });

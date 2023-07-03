@@ -17,7 +17,8 @@
         "Haz un colado fino y sirve en vaso old fashioned con hielos",
         "Puedes decorar con hojitas de hierbabuena o dos granos de café sobre la espuma"
       ],
-      "link": "https://youtu.be/kzr9aef_71Q"
+      "link": "https://youtu.be/kzr9aef_71Q",
+      "image": "https://www.foodiecrush.com/wp-content/uploads/2012/07/Whiskey-Lemonade-FoodieCrush-014-1.jpg"
     },
     {
       "id": 2,
@@ -35,7 +36,8 @@
         "Servir en proporciones iguales primero el Ramazzotti, y luego el espumante. Finalmente agregar un chorrito de agua mineral con gas y revolver",
         "Decorar con una rodaja de naranja y berries, a gusto"
       ],
-      "link": "https://youtu.be/71mCXkEVcVY"
+      "link": "https://youtu.be/71mCXkEVcVY",
+      "image": "https://www.deliriorestobar.cl/wp-content/uploads/2020/07/JAP07764.jpg"
     },
     {
       "id": 3,
@@ -53,7 +55,8 @@
         "En un plato agregar canela en polvo y azucar morena",
         "Adobar el vaso en la cascara de la naranja y untar los bordes en el plato"
       ],
-      "link": "https://youtu.be/XShMJ-h3bvQ"
+      "link": "https://youtu.be/XShMJ-h3bvQ",
+      "image": "https://i.pinimg.com/originals/e3/44/74/e3447482cbb8955b488e30b4a6ce31a6.jpg"
     },
     {
       "title": "Orange Cinnamon Old-Fashioned",
@@ -74,6 +77,7 @@
         " Drop it into the drink skin-side up for garnish"
       ],
       "link": "https://youtu.be/F21HMRcWKSo",
+      "image": "https://www.halfbakedharvest.com/wp-content/uploads/2019/11/Cinnamon-Bourbon-Old-Fashioned-with-Bru%CC%82le%CC%81ed-Oranges-4-700x1050.jpg",
       "id": 4
     }
   ]
