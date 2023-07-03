@@ -9,8 +9,8 @@
 <body>
     <ul class="lista">
         <li><a href="/">Inicio</a></li>
-        <li><a href="/enterprise">Sobre Nosotros</a></li>
         <li><a href="/cocktail-add">Añadir</a></li>
+        <li><a href="/enterprise">Sobre Nosotros</a></li>
     </ul>
     <section class="section">
         <h1>Cocteles disponibles</h1>
@@ -43,8 +43,8 @@
                 });
             
                 recipeTemplate += `
-                    <article>
-                        <h3><a href="${element.id}">${element.title}</a></h3>
+                    <article class="border">
+                        <h3><a href="/cocktail/${element.id}">${element.title}</a></h3>
                         <h4>Ingredientes:</h4>
                         <ul>${ingredientsTemplate}</ul>
                         <h4>Preparación:</h4>

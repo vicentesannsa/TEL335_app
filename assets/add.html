@@ -9,13 +9,13 @@
 <body>
     <ul class="lista">
         <li><a href="/">Inicio</a></li>
-        <li><a href="/enterprise">Sobre Nosotros</a></li>
         <li><a href="/cocktail-add">Añadir</a></li>
+        <li><a href="/enterprise">Sobre Nosotros</a></li>
     </ul>
     <section class="section">
         <h1>Añadir cocteles</h1>
         <hr>
-        <form action="/recetas" method="POST" enctype="application/x-www-form-urlencoded" id="form">
+        <form action="/recetas"  method="POST" enctype="application/x-www-form-urlencoded" id="form">
             <label for="title">Nombre:</label>
             <input type="text" name="title" id="title" placeholder="Título de la receta">
             <label for="ingredients">Ingredientes</label>
@@ -27,28 +27,6 @@
             <input id="submit-form" type="submit" value="Crear Receta">
         </form>
     </section>
-    <script type="text/javascript">
-        const $form = document.getElementById("form"),
-        $recipe_list = document.getElementById("recipe-list"),
-        $submit_form = document.getElementById("submit-form");
-
-        document.addEventListener("click", e => {
-            if(e.target == $submit_form){
-                let title = $form.title.value,
-                link = $form.link.value;
-            
-                let ingredients = $form.ingredients.value.replace(/\n/g, "");
-                ingredients = ingredients.split(".");
-                ingredients.pop();
-
-                let preparation = $form.preparation.value.replace(/\n/g, "");
-                preparation = preparation.split(".");
-                preparation.pop();
-
-                console.log(title, ingredients, preparation, link);
-                $form.submit()
-            }
-        });
-    </script>
+    
 </body>
 </html>

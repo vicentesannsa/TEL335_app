@@ -22,14 +22,43 @@ a:hover {
 }
 
 article {
-    border: thin solid black;
     border-radius: 8px;
-    margin-bottom: 1rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1.25rem;
     padding: 1.25rem;
     width: 60%;
+}
+
+.border {
+    background-color: #FFFFFF90;
+}
+
+.bg {
+    background-color: #FFFFFF90;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.bg iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+aside a {
+    text-decoration: none;
+    color: #000;
+    transition: color 250ms ease-in-out;
+}
+
+aside a:hover {
+    color: #2EC4B6;
 }
 
 body {
@@ -73,8 +102,7 @@ input[type="email"] {
     border-radius: 4px;
     font-family: monospace;
     font-size: 1.125rem;
-    padding-bottom: 0.75rem;
-    padding-top: 0.75rem;
+    padding: 0.75rem 0.5rem;
 }
 
 input[type="text"]::placeholder {
@@ -146,6 +174,10 @@ ul {
     margin-right: auto;
 }
 
+#recipe-list {
+    margin-bottom: 1rem;
+}
+
 /* menu */
 
 .lista{
@@ -190,6 +222,8 @@ ul {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    background-color: #ECF0F1;
+    border-radius: 4px;
 }
 
 .contact-card > svg {
@@ -405,9 +439,9 @@ ul {
 .contact-form {
     font-family: monospace;
     font-size: 1.125rem;
-    margin: 2rem auto;
-    padding: 1rem;
-    max-width: 800px;   
+    margin: 0 auto;
+    padding: 1rem; 
+    max-width: 60%
 }
 
 .contact-form > * {
@@ -419,7 +453,6 @@ ul {
 
 .contact-form input {
     border: 0;
-    padding-left: 0;
     border-bottom: thin solid var(--gray-dark-color);
     background-color: #ECF0F1;
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+    <ul class="lista">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/cocktail-add">Añadir</a></li>
+        <li><a href="/enterprise">Sobre Nosotros</a></li>
+    </ul>
+    <div id="content"></div>
+    <script type="text/javascript">
+        const id = location.pathname.replace("/cocktail/", "");
+        const $content = document.getElementById("content")
+
+        fetch(`http://localhost:3000/recetas/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            let ingredientsTemplate = "",
+            preparationTemplate = "";
+
+            const ingredients = data.ingredients,
+            preparation = data.preparation;
+
+            ingredients.forEach(ingredient => {
+                ingredientsTemplate += `<li>${ingredient}</li>`;
+            });
+
+            preparation.forEach(step => {
+                preparationTemplate += `<li>${step}</li>`;
+            });
+
+            let link = data.link.replace("https://youtu.be/", "");
+        
+            const recipeTemplate = `
+                <section class="section bg">
+                    <h1>${data.title}</h1>
+                    <hr>
+                    <h2>Ingredientes:</h2>
+                    <ul>${ingredientsTemplate}</ul>
+                    <hr>
+                    <h2>Preparación:</h2>
+                    <ol>${preparationTemplate}</ol>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/${link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <div class="cocktail-config">
+                        <button class="cocktail-edit">Editar</button>
+                        <button class="cocktail-delete">Eliminar</button>
+                    </div>
+                </section>
+            `;
+            $content.innerHTML = recipeTemplate;
+        })
+        .catch(error => console.error(error));
+    </script>
+</body>
+</html>
