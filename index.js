@@ -27,8 +27,6 @@ app.use(async (ctx) => {
     }
 
     if (url.startsWith('/cocktail/')){
-        
-
         ctx.type = 'html';
         ctx.body = fs.createReadStream(path.join(staticPath, 'cocktail.html'));
     }
@@ -36,6 +34,29 @@ app.use(async (ctx) => {
     if(ctx.path == '/cocktail-add'){
         ctx.type = 'html';
         ctx.body = fs.createReadStream(path.join(staticPath, 'add.html'));
+    }
+
+    if (url.startsWith('/cocktail-delete/')){
+        const id = url.substring(17);
+        console.log(id);
+
+        ctx.body = {id}
+
+        try {
+            let options = {
+                method: "DELETE",
+                headers: {
+                    "Content-type": "application/json; charset=utf-8"
+                }
+            },
+            res = await fetch(`http://localhost:3000/recetas/${id}`, options),
+            json = await res.json();
+
+            if(!res.ok) throw {status: res.status, statusText: res.statusText};
+            ctx.redirect("/")
+        } catch (err) {
+            ctx.redirect("/")
+        }
     }
 
     if(ctx.path == '/recetas' && ctx.method == 'POST'){
@@ -64,7 +85,6 @@ app.use(async (ctx) => {
             
             ctx.redirect("/cocktail-add")
         } catch (err) {
-            console.log(err);
             ctx.redirect("/")
         }
     }

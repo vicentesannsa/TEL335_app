@@ -79,6 +79,23 @@
       "link": "https://youtu.be/F21HMRcWKSo",
       "image": "https://www.halfbakedharvest.com/wp-content/uploads/2019/11/Cinnamon-Bourbon-Old-Fashioned-with-Bru%CC%82le%CC%81ed-Oranges-4-700x1050.jpg",
       "id": 4
+    },
+    {
+      "title": "JACK & GINGER",
+      "ingredients": [
+        "50 ml Jack Daniel's Old No 7",
+        "Ginger ale"
+      ],
+      "preparation": [
+        "3/4 fill a highball glass with cubed ice",
+        "Pour Old No",
+        "7 over ice",
+        "Top with ginger ale",
+        "Add lime wedge to garnish"
+      ],
+      "link": "",
+      "image": "https://res.cloudinary.com/hjqklbxsu/image/upload/f_auto,fl_lossy,q_auto/v1536955281/recipe/recipe/Jack_Ginger_FullSize.png",
+      "id": 5
     }
   ]
 }
