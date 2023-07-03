@@ -38,7 +38,6 @@ app.use(async (ctx) => {
 
     if (url.startsWith('/cocktail-delete/')){
         const id = url.substring(17);
-        console.log(id);
 
         ctx.body = {id}
 
@@ -56,6 +55,41 @@ app.use(async (ctx) => {
             ctx.redirect("/")
         } catch (err) {
             ctx.redirect("/")
+        }
+    }
+
+    if (url.startsWith('/cocktail-edit/') && ctx.method == 'GET'){
+        ctx.type = 'html';
+        ctx.body = fs.createReadStream(path.join(staticPath, 'edit.html'));
+    }
+
+    if (url.startsWith('/cocktail-edit/') && ctx.method == 'POST'){
+        const body = ctx.request.body;
+        
+        for (const property in body) {
+            if (property == "ingredients" || property == "preparation") {
+                body[property] = body[property].replace(/\r|\n/g, "").split(".")
+                body[property].pop()
+            }
+        }
+
+        try {
+            let options = {
+                method: "PUT",
+                headers: {
+                    "Content-type": "application/json; charset=utf-8"
+                },
+                body: JSON.stringify(body)
+            }
+
+            res = await fetch(`http://localhost:3000/recetas/${body.id}`, options),
+            json = await res.json();
+
+            if(!res.ok) throw {status: res.status, statusText: res.statusText};
+            
+            ctx.redirect(`/cocktail/${body.id}`)
+        } catch (err) {
+            ctx.redirect(`/cocktail/${body.id}`)
         }
     }
 

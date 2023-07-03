@@ -72,6 +72,17 @@ article {
     color: #000;
 }
 
+.center {
+    text-align: center;
+}
+
+.image {
+    display: block;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .anim-bottom::after {
     content: "";
     position: absolute;

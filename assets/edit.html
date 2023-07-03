@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir coctel</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+    <ul class="lista">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/cocktail-add">Añadir</a></li>
+        <li><a href="/enterprise">Sobre Nosotros</a></li>
+    </ul>
+    <section class="section">
+        <h1>Editar coctel</h1>
+        <hr>
+        <form id="form" action="/cocktail-edit/"  method="POST" enctype="application/x-www-form-urlencoded" id="form">
+            <input type="hidden" id="id" name="id">
+            <label for="title">Nombre:</label>
+            <input type="text" name="title" id="title" placeholder="Título de la receta">
+            <label for="ingredients">Ingredientes</label>
+            <textarea name="ingredients" id="ingredients" cols="30" rows="5" placeholder="Separar los ingredientes de la receta mediante un punto..."></textarea>
+            <label for="preparation">Preparación:</label>
+            <textarea name="preparation" id="preparation" cols="30" rows="5" placeholder="Separar las instrucciones de la preparación mediante un punto..."></textarea>
+            <label for="link">Enlace a video:</label>
+            <input type="text" name="link" id="link" placeholder="Enlace hacia el video">
+            <label for="image">Enlace a la imagen:</label>
+            <input type="text" name="image" id="image" placeholder="Enlace hacia la imagen">
+            <input id="submit-form" type="submit" value="Editar Receta">
+        </form>
+    </section>
+    <script type="text/javascript">
+        const id = location.pathname.replace("/cocktail-edit/", "");
+        const $form = document.getElementById("form");
+
+        fetch(`http://localhost:3000/recetas/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            $form.id.value = data.id;
+            $form.title.value = data.title;
+            $form.link.value = data.link;
+            $form.image.value = data.image;
+
+            let temp_ingredients = data.ingredients,
+            ingredients = "",
+            dot = "\r\n";
+
+            temp_ingredients.forEach(element => {
+                ingredient = element;
+                ingredients += ingredient.concat('.', dot);
+            });
+
+            let temp_preparation = data.preparation,
+            preparation = "";
+
+            temp_preparation.forEach(element => {
+                step = element
+                preparation += step.concat('.', dot)
+            });
+
+            $form.ingredients.innerHTML = ingredients;
+            $form.preparation.innerHTML = preparation;
+        })
+        .catch(error => console.error(error));
+    </script>
+</body>
+</html>
