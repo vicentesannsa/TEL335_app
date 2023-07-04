@@ -192,7 +192,7 @@ input[type="submit"] {
     margin-top: 1rem;
     padding: 0.5rem;
     transition: background-color 250ms ease-in-out;
-    width: 20%;
+    width: auto;
 }
 
 input[type="submit"]:hover {
