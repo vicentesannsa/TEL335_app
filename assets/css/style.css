@@ -26,6 +26,10 @@ article {
     width: 100%;
 }
 
+iframe {
+    max-width: 100%;
+}
+
 .border {
     background-color: #FFFFFF90;
     height: fit-content;
@@ -212,6 +216,10 @@ textarea {
     border-radius: 4px;
     font-size: 1.125rem;
     resize: none;
+}
+
+#contacto article {
+    padding: 1rem;
 }
 
 textarea::placeholder {
@@ -508,7 +516,6 @@ ul {
     font-size: 1.125rem;
     margin: 0 auto;
     padding: 1rem; 
-    max-width: 60%
 }
 
 .contact-form > * {
